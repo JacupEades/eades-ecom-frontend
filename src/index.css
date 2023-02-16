@@ -54,3 +54,46 @@ span.h6 {
 .ant-card .ant-card-actions {
    background-color: rgba(0, 0, 0, 0.075);
 }
+
+/* breakpoints */
+
+@media only screen and (min-width: 768px) {
+   .card-cols {
+      width: 33.333% !important
+   }
+   
+   .store-mobile {
+      padding-left: 0 !important;
+   }
+   
+   .search-icon {
+      display: flex;
+      align-items: center;
+   }
+
+
+   .card-cols-store {
+      width: 33.333% !important
+   }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+   .card-cols-store {
+      width: 50% !important
+   }
+
+   .display-sm {
+      display: none !important
+   }
+
+   .store-mobile {
+      padding: 16px 16px !important
+   }
+}
+
+@media only screen and (max-width: 480px) {
+   .card-cols-store {
+      width: 100% !important
+   }
+
+}

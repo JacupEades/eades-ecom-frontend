@@ -281,7 +281,7 @@ const Shop = () => {
 	};
 
 	return (
-		<div className="container-fluid ps-0">
+		<div className="container-fluid store-mobile">
 			<div className="row">
 				<div className="col-md-3">
 					<ShopNav
@@ -310,7 +310,7 @@ const Shop = () => {
 
 					<div className="row pb-5">
 						{products.map((p) => (
-							<div key={p._id} className="col-md-4 mt-3">
+							<div key={p._id} className="col-md-4 mt-3 card-cols-store">
 								<ProductCard product={p} />
 							</div>
 						))}

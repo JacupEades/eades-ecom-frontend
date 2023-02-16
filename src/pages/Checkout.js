@@ -171,7 +171,6 @@ const Checkout = ({ history }) => {
 					<div className="col-md-6">
 						<h4>Delivery Address</h4>
 						<br />
-						<br />
 						{showAddress()}
 						<hr />
 						<h4 className="m-0">Got Coupon?</h4>

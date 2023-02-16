@@ -35,10 +35,7 @@ const BestSellers = () => {
 				) : (
 					<div className="row">
 						{products.map((product) => (
-							<div
-								key={product._id}
-								className="col-md-3"
-								style={{ width: "33.333%" }}>
+							<div key={product._id} className="col-md-3 card-cols">
 								<ProductCard product={product} />
 							</div>
 						))}

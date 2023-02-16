@@ -28,7 +28,7 @@ const Search = () => {
 				<SearchOutlined
 					onClick={handleSubmit}
 					style={{ cursor: "pointer" }}
-					className="col-sm-2 d-flex align-items-center"
+					className="col-sm-2 align-items-center display-sm search-icon"
 				/>
 				<input
 					onChange={handleChange}

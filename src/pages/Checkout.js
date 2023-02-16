@@ -159,72 +159,80 @@ const Checkout = ({ history }) => {
 	};
 
 	return (
-		<div className="container-fluid">
-			<div className="row mt-2">
-				<div className="col-md-6">
-					<h4>Delivery Address</h4>
-					<br />
-					<br />
-					{showAddress()}
-					<hr />
-					<h4 className="m-0">Got Coupon?</h4>
-					<br />
-					{discountError && (
-						<p className="bg-danger text-center text-light p-2 rounded-pill">
-							{discountError}
-						</p>
-					)}
-					{showApplyCoupon()}
-				</div>
-
-				<div className="col-md-6">
-					<h4>Order Summary</h4>
-					<hr />
-					<p>Products {products.length}</p>
-					<hr />
-					{showProductSummary()}
-					<hr />
-					<p>Cart Total: ${total}</p>
-
-					{totalAfterDiscount > 0 && (
-						<div>
-							<p className="bg-success text-center text-light p-2 rounded-pill">
-								Discount applied, new total:
-								<br /> ${totalAfterDiscount}
+		<>
+			<div className="row bg-danger w-100 text-center m-0">
+				<h4 className="text-light ps-3 pe-3 m-1">
+					Orders can be made but there will be no charges. This is only a
+					demonstration project.
+				</h4>
+			</div>
+			<div className="container-fluid">
+				<div className="row mt-2">
+					<div className="col-md-6">
+						<h4>Delivery Address</h4>
+						<br />
+						<br />
+						{showAddress()}
+						<hr />
+						<h4 className="m-0">Got Coupon?</h4>
+						<br />
+						{discountError && (
+							<p className="bg-danger text-center text-light p-2 rounded-pill">
+								{discountError}
 							</p>
-						</div>
-					)}
+						)}
+						{showApplyCoupon()}
+					</div>
 
-					<div className="row">
-						<div className="col-md-6">
-							{COD ? (
+					<div className="col-md-6">
+						<h4>Order Summary</h4>
+						<hr />
+						<p>Products {products.length}</p>
+						<hr />
+						{showProductSummary()}
+						<hr />
+						<p>Cart Total: ${total}</p>
+
+						{totalAfterDiscount > 0 && (
+							<div>
+								<p className="bg-success text-center text-light p-2 rounded-pill">
+									Discount applied, new total:
+									<br /> ${totalAfterDiscount}
+								</p>
+							</div>
+						)}
+
+						<div className="row">
+							<div className="col-md-6">
+								{COD ? (
+									<button
+										className="btn btn-primary"
+										disabled={!addressSaved || !products.length}
+										onClick={createCashOrder}>
+										Place Order
+									</button>
+								) : (
+									<button
+										className="btn btn-primary"
+										disabled={!addressSaved || !products.length}
+										onClick={() => history.push("/payment")}>
+										Place Order
+									</button>
+								)}
+							</div>
+							<div className="col-md-6">
 								<button
-									className="btn btn-primary"
-									disabled={!addressSaved || !products.length}
-									onClick={createCashOrder}>
-									Place Order
+									disabled={!products.length}
+									className="btn btn-danger"
+									onClick={emptyCart}>
+									Empty Cart
 								</button>
-							) : (
-								<button
-									className="btn btn-primary"
-									disabled={!addressSaved || !products.length}
-									onClick={() => history.push("/payment")}>
-									Place Order
-								</button>
-							)}
-						</div>
-						<div className="col-md-6">
-							<button
-								disabled={!products.length}
-								className="btn btn-danger"
-								onClick={emptyCart}>
-								Empty Cart
-							</button>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

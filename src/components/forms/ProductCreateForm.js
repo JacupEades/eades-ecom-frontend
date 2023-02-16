@@ -131,7 +131,10 @@ const ProductCreateForm = ({
 						onChange={(value) => setValues({ ...values, subs: value })}>
 						{subOptions.length &&
 							subOptions.map((s) => (
-								<Option key={s._id} value={s._id}>
+								<Option
+									key={s._id}
+									value={s._id}
+									style={{ verticalAlign: "center" }}>
 									{s.name}
 								</Option>
 							))}

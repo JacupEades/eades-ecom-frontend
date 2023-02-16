@@ -8,7 +8,7 @@ import {
 	LogoutOutlined,
 	ShoppingOutlined,
 	ShoppingCartOutlined,
-	DashboardOutlined,
+	HomeOutlined,
 } from "@ant-design/icons";
 import { Link, useHistory } from "react-router-dom";
 import firebase from "firebase/compat/app";
@@ -91,7 +91,7 @@ const Header = () => {
 				{
 					label: <Link to="..">Home</Link>,
 					key: "home",
-					icon: <AppstoreOutlined />,
+					icon: <HomeOutlined />,
 				},
 				{
 					label: <Link to="/shop">Shop</Link>,
@@ -147,7 +147,7 @@ const Header = () => {
 				{
 					label: <Link to="..">Home</Link>,
 					key: "home",
-					icon: <AppstoreOutlined />,
+					icon: <HomeOutlined />,
 				},
 				{
 					label: <Link to="/shop">Shop</Link>,
@@ -182,7 +182,7 @@ const Header = () => {
 						{
 							label: <Link to="/admin/dashboard">Dashboard</Link>,
 							key: "adminDB",
-							icon: <DashboardOutlined />,
+							icon: <AppstoreOutlined />,
 						},
 						{
 							label: <Link to="/user/history">Admin Settings</Link>,

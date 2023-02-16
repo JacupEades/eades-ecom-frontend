@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 import { createUpdateUser } from "../../functions/auth";
 
 const Login = ({ history }) => {
-	const [email, setEmail] = useState("jwae98@gmail.com");
-	const [password, setPassword] = useState("123456");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 	const [loading, setLoading] = useState(false);
 
 	const { user } = useSelector((state) => ({ ...state }));
@@ -174,6 +174,17 @@ const Login = ({ history }) => {
 					<Link to="/forgot/password" className="float-end text-danger">
 						Forgot password?
 					</Link>
+					<div className="mt-5 float-end text-info">
+						Welcome, if you would like to login using a premade development
+						account:
+						<br />
+						<br />
+						Admin: <b>jwae98@gmail.com</b>
+						<br />
+						Normal user: <b>jwae98@aol.com</b>
+						<br />
+						Passwords: <b>123456</b>
+					</div>
 				</div>
 			</div>
 		</div>

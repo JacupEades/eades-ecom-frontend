@@ -117,7 +117,7 @@ const StripeCheckout = ({ history }) => {
 					cover={
 						<img
 							alt="DefaultImage default"
-							src={"DefaultImage"}
+							src={DefaultImage}
 							style={{
 								height: "200px",
 								objectFit: "cover",

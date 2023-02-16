@@ -7,7 +7,7 @@ import ShopNav from "../components/nav/ShopNav";
 import { getCategories } from "../functions/category";
 import { getSubs } from "../functions/sub";
 import Star from "../components/forms/Star";
-import { Checkbox, Radio } from "antd";
+import { Checkbox } from "antd";
 
 const Shop = () => {
 	const [products, setProducts] = useState([]);
@@ -19,22 +19,22 @@ const Shop = () => {
 	const [star, setStar] = useState("");
 	const [subs, setSubs] = useState([]);
 	const [sub, setSub] = useState([]);
-	const [brands, setBrands] = useState([
-		"Apple",
-		"Samsung",
-		"Microsoft",
-		"Lenovo",
-		"ASUS",
-	]);
-	const [brand, setBrand] = useState("");
-	const [colors, setColors] = useState([
-		"Black",
-		"Brown",
-		"Silver",
-		"White",
-		"Blue",
-	]);
-	const [color, setColor] = useState("");
+	// const [brands, setBrands] = useState([
+	// 	"Apple",
+	// 	"Samsung",
+	// 	"Microsoft",
+	// 	"Lenovo",
+	// 	"ASUS",
+	// ]);
+	// const [brand, setBrand] = useState("");
+	// const [colors, setColors] = useState([
+	// 	"Black",
+	// 	"Brown",
+	// 	"Silver",
+	// 	"White",
+	// 	"Blue",
+	// ]);
+	// const [color, setColor] = useState("");
 	const [shipping, setShipping] = useState("");
 
 	let dispatch = useDispatch();
@@ -91,8 +91,8 @@ const Shop = () => {
 		setCategoryIds([]);
 		setStar("");
 		setSub("");
-		setBrand("");
-		setColor("");
+		// setBrand("");
+		// setColor("");
 		setShipping("");
 		setPrice(value);
 		setTimeout(() => {
@@ -108,8 +108,8 @@ const Shop = () => {
 		setPrice([0, 0]);
 		setStar("");
 		setSub("");
-		setBrand("");
-		setColor("");
+		// setBrand("");
+		// setColor("");
 		setShipping("");
 		// console.log(e.target.value);
 		let inTheState = [...categoryIds];
@@ -138,8 +138,8 @@ const Shop = () => {
 		setPrice([0, 0]);
 		setCategoryIds([]);
 		setSub("");
-		setBrand("");
-		setColor("");
+		// setBrand("");
+		// setColor("");
 		setShipping("");
 		setStar(num);
 		fetchProducts({ stars: num });
@@ -177,72 +177,72 @@ const Shop = () => {
 		setPrice([0, 0]);
 		setCategoryIds([]);
 		setStar("");
-		setBrand("");
-		setColor("");
+		// setBrand("");
+		// setColor("");
 		setShipping("");
 		setSub(sub);
 		fetchProducts({ sub });
 	};
 
 	// 7. load products based on brands
-	const showBrands = () =>
-		brands.map((b) => (
-			<Radio
-				key={b}
-				value={b}
-				name={b}
-				checked={b === brand}
-				onChange={handleBrand}
-				className="pb-1">
-				{b}
-			</Radio>
-		));
+	// const showBrands = () =>
+	// 	brands.map((b) => (
+	// 		<Radio
+	// 			key={b}
+	// 			value={b}
+	// 			name={b}
+	// 			checked={b === brand}
+	// 			onChange={handleBrand}
+	// 			className="pb-1">
+	// 			{b}
+	// 		</Radio>
+	// 	));
 
-	const handleBrand = (e) => {
-		// console.log(e.target.value);
-		dispatch({
-			type: "SEARCH_QUERY",
-			payload: { text: "" },
-		});
-		setPrice([0, 0]);
-		setCategoryIds([]);
-		setStar("");
-		setSub("");
-		setColor("");
-		setShipping("");
-		setBrand(e.target.value);
-		fetchProducts({ brand: e.target.value });
-	};
+	// const handleBrand = (e) => {
+	// 	// console.log(e.target.value);
+	// 	dispatch({
+	// 		type: "SEARCH_QUERY",
+	// 		payload: { text: "" },
+	// 	});
+	// 	setPrice([0, 0]);
+	// 	setCategoryIds([]);
+	// 	setStar("");
+	// 	setSub("");
+	// setColor("");
+	// 	setShipping("");
+	// 	setBrand(e.target.value);
+	// 	fetchProducts({ brand: e.target.value });
+	// };
 
 	// 8. load products based on colors
-	const showColors = () =>
-		colors.map((c) => (
-			<Radio
-				key={c}
-				value={c}
-				name={c}
-				checked={c === color}
-				onChange={handleColor}
-				className="pb-1">
-				{c}
-			</Radio>
-		));
+	// const showColors = () =>
+	// 	colors.map((c) => (
+	// 		<Radio
+	// 			key={c}
+	// 			value={c}
+	// 			name={c}
+	// 			checked={c === color}
+	// 			onChange={handleColor}
+	// 			className="pb-1">
+	// 			{c}
+	// 		</Radio>
+	// 	));
 
-	const handleColor = (e) => {
-		// console.log(e.target.value);
-		dispatch({
-			type: "SEARCH_QUERY",
-			payload: { text: "" },
-		});
-		setPrice([0, 0]);
-		setCategoryIds([]);
-		setStar("");
-		setSub("");
-		setBrand("");
-		setShipping("");
-		setColor(e.target.value);
-		fetchProducts({ color: e.target.value });
-	};
+	// const handleColor = (e) => {
+	// 	// console.log(e.target.value);
+	// 	dispatch({
+	// 		type: "SEARCH_QUERY",
+	// 		payload: { text: "" },
+	// 	});
+	// 	setPrice([0, 0]);
+	// 	setCategoryIds([]);
+	// 	setStar("");
+	// 	setSub("");
+	// 	setBrand("");
+	// 	setShipping("");
+	// 	setColor(e.target.value);
+	// 	fetchProducts({ color: e.target.value });
+	// };
 
 	// 9. load products based on shipping
 	const showShipping = () => (
@@ -274,8 +274,8 @@ const Shop = () => {
 		setCategoryIds([]);
 		setStar("");
 		setSub("");
-		setBrand("");
-		setColor("");
+		// setBrand("");
+		// setColor("");
 		setShipping(e.target.value);
 		fetchProducts({ shipping: e.target.value });
 	};
@@ -295,8 +295,8 @@ const Shop = () => {
 						handleCheck={handleCheck}
 						showStars={showStars}
 						showSubs={showSubs}
-						showBrands={showBrands}
-						showColors={showColors}
+						// showBrands={showBrands}
+						// showColors={showColors}
 						showShipping={showShipping}
 					/>
 				</div>

@@ -1,41 +1,37 @@
 import React from "react";
 import ModalImage from "react-modal-image";
-import laptop from "../../images/laptop.jpg";
+import DefaultImage from "../../images/defaultImage.jpg";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import {
-	CheckCircleOutlined,
-	CloseCircleOutlined,
-	CloseOutlined,
-} from "@ant-design/icons";
+import { CloseOutlined } from "@ant-design/icons";
 
 const ProductCardInCheckout = ({ p }) => {
-	const colors = ["Black", "Brown", "Silver", "White", "Blue"];
+	// const colors = ["Black", "Brown", "Silver", "White", "Blue"];
 	let dispatch = useDispatch();
 
-	const handleColorChange = (e) => {
-		// console.log("color changed", e.target.value);
+	// const handleColorChange = (e) => {
+	// 	// console.log("color changed", e.target.value);
 
-		let cart = [];
-		if (typeof window !== "undefined") {
-			if (localStorage.getItem("cart")) {
-				cart = JSON.parse(localStorage.getItem("cart"));
-			}
+	// 	let cart = [];
+	// 	if (typeof window !== "undefined") {
+	// 		if (localStorage.getItem("cart")) {
+	// 			cart = JSON.parse(localStorage.getItem("cart"));
+	// 		}
 
-			cart.map((product, i) => {
-				if (product._id === p._id) {
-					cart[i].color = e.target.value;
-				}
-			});
+	// 		cart.map((product, i) => {
+	// 			if (product._id === p._id) {
+	// 				cart[i].color = e.target.value;
+	// 			}
+	// 		});
 
-			// console.log("cart update color", cart)
-			localStorage.setItem("cart", JSON.stringify(cart));
-			dispatch({
-				type: "ADD_TO_CART",
-				payload: cart,
-			});
-		}
-	};
+	// 		// console.log("cart update color", cart)
+	// 		localStorage.setItem("cart", JSON.stringify(cart));
+	// 		dispatch({
+	// 			type: "ADD_TO_CART",
+	// 			payload: cart,
+	// 		});
+	// 	}
+	// };
 
 	const handleQuantityChange = (e) => {
 		// console.log("available quantity", p.quantity);
@@ -109,14 +105,18 @@ const ProductCardInCheckout = ({ p }) => {
 								alt={p.title}
 							/>
 						) : (
-							<ModalImage small={laptop} large={laptop} alt={p.title} />
+							<ModalImage
+								small={DefaultImage}
+								large={DefaultImage}
+								alt={p.title}
+							/>
 						)}
 					</div>
 				</td>
 				<td className="text-center">{p.title}</td>
 				<td className="text-center">${p.price}</td>
-				<td className="text-center">{p.brand}</td>
-				<td className="text-center">
+				{/* <td className="text-center">{p.brand}</td> */}
+				{/* <td className="text-center">
 					<select
 						onChange={handleColorChange}
 						name="color"
@@ -134,7 +134,7 @@ const ProductCardInCheckout = ({ p }) => {
 								</option>
 							))}
 					</select>
-				</td>
+				</td> */}
 				<td className="text-center">
 					<input
 						type="number"

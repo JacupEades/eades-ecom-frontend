@@ -18,10 +18,10 @@ const initialState = {
 	shipping: "Yes",
 	quantity: "50",
 	images: [],
-	colors: ["Black", "Brown", "Silver", "White", "Blue"],
-	brands: ["Apple", "Samsung", "Microsoft", "Lenovo", "ASUS"],
-	color: "White",
-	brand: "Apple",
+	// colors: ["Black", "Brown", "Silver", "White", "Blue"],
+	// brands: ["Apple", "Samsung", "Microsoft", "Lenovo", "ASUS"],
+	// color: "White",
+	// brand: "Apple",
 };
 
 const ProductCreate = () => {

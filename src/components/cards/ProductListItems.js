@@ -2,8 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProductListItems = ({ product }) => {
-	const { price, category, subs, shipping, color, brand, quantity, sold } =
-		product;
+	const {
+		price,
+		category,
+		subs,
+		shipping,
+		// brand,
+		quantity,
+		sold,
+		// color,
+	} = product;
 
 	return (
 		<ul className="list-group">
@@ -42,18 +50,18 @@ const ProductListItems = ({ product }) => {
 					{shipping}
 				</span>
 			</li>
-			<li className="list-group-item">
+			{/* <li className="list-group-item">
 				Color{" "}
 				<span className="float-end label label-default pull-xs-right">
 					{color}
 				</span>
-			</li>
-			<li className="list-group-item">
+			</li> */}
+			{/* <li className="list-group-item">
 				Brand{" "}
 				<span className="float-end label label-default pull-xs-right">
 					{brand}
 				</span>
-			</li>
+			</li> */}
 			<li className="list-group-item">
 				Available{" "}
 				<span className="float-end label label-default pull-xs-right">

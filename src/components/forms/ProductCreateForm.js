@@ -17,15 +17,15 @@ const ProductCreateForm = ({
 		description,
 		price,
 		categories,
-		category,
+		// category,
 		subs,
-		shipping,
+		// shipping,
 		quantity,
-		images,
-		colors,
-		brands,
-		color,
-		brand,
+		// images,
+		// colors,
+		// brands,
+		// color,
+		// brand,
 	} = values;
 
 	return (
@@ -81,7 +81,7 @@ const ProductCreateForm = ({
 					onChange={handleChange}
 				/>
 			</div>
-			<div className="form-group">
+			{/* <div className="form-group">
 				<label>Color</label>
 				<select name="color" className="form-control" onChange={handleChange}>
 					<option>Please select</option>
@@ -91,8 +91,8 @@ const ProductCreateForm = ({
 						</option>
 					))}
 				</select>
-			</div>
-			<div className="form-group">
+			</div> */}
+			{/* <div className="form-group">
 				<label>Brand</label>
 				<select name="brand" className="form-control" onChange={handleChange}>
 					<option>Please select</option>
@@ -102,7 +102,7 @@ const ProductCreateForm = ({
 						</option>
 					))}
 				</select>
-			</div>
+			</div> */}
 
 			<div className="form-group">
 				<label>Category</label>

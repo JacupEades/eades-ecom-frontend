@@ -14,8 +14,8 @@ const ShopNav = ({
 	handleCheck,
 	showStars,
 	showSubs,
-	showBrands,
-	showColors,
+	// showBrands,
+	// showColors,
 	showShipping,
 }) => {
 	const showCategories = () =>
@@ -81,19 +81,19 @@ const ShopNav = ({
 			[getItem(<div className="row">{showSubs()}</div>, "subSelectChild")]
 		),
 		// Brands Selection
-		getItem(
-			<span className="h6">Brands</span>,
-			"brandSelect",
-			<DownSquareOutlined style={{ fontSize: "1rem" }} />,
-			[getItem(<div className="row">{showBrands()}</div>, "brandSelectChild")]
-		),
+		// getItem(
+		// 	<span className="h6">Brands</span>,
+		// 	"brandSelect",
+		// 	<DownSquareOutlined style={{ fontSize: "1rem" }} />,
+		// 	[getItem(<div className="row">{showBrands()}</div>, "brandSelectChild")]
+		// ),
 		// Colors Selection
-		getItem(
-			<span className="h6">Colors</span>,
-			"colorSelect",
-			<DownSquareOutlined style={{ fontSize: "1rem" }} />,
-			[getItem(<div className="row">{showColors()}</div>, "colorSelectChild")]
-		),
+		// getItem(
+		// 	<span className="h6">Colors</span>,
+		// 	"colorSelect",
+		// 	<DownSquareOutlined style={{ fontSize: "1rem" }} />,
+		// 	[getItem(<div className="row">{showColors()}</div>, "colorSelectChild")]
+		// ),
 		// Shipping Selection
 		getItem(
 			<span className="h6">Shipping</span>,

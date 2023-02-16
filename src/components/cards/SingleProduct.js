@@ -3,7 +3,7 @@ import { Card, Tabs, Tooltip } from "antd";
 import { HeartOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Laptop from "../../images/laptop.jpg";
+import DefaultImage from "../../images/defaultImage.jpg";
 import ProductListItems from "./ProductListItems";
 import StarRating from "react-star-ratings";
 import RatingModal from "../modal/RatingModal";
@@ -24,7 +24,7 @@ const SingleProduct = ({ product, onStarClick, star }) => {
 	const [tooltip, setTooltip] = useState("Click to add to cart");
 
 	// redux
-	const { user, cart } = useSelector((state) => ({ ...state }));
+	const { user } = useSelector((state) => ({ ...state }));
 	const dispatch = useDispatch();
 	// router
 	let history = useHistory();
@@ -97,7 +97,7 @@ const SingleProduct = ({ product, onStarClick, star }) => {
 					</Carousel>
 				) : (
 					<Carousel showArrows={true} autoPlay infiniteLoop>
-						<img src={Laptop} alt="Default Product, none provided" />
+						<img src={DefaultImage} alt="Default Product, none provided" />
 					</Carousel>
 				)}
 				<Tabs defaultActiveKey="1" items={tabItems} />
@@ -127,7 +127,7 @@ const SingleProduct = ({ product, onStarClick, star }) => {
 								Cart
 							</a>
 						</Tooltip>,
-						<a onClick={handleAddToWishlist}>
+						<a href="#0" onClick={handleAddToWishlist}>
 							<HeartOutlined className="text-info" /> <br />
 							Add to Wishlist
 						</a>,

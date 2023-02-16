@@ -21,14 +21,14 @@ const ProductUpdateForm = ({
 		description,
 		price,
 		category,
-		subs,
+		// subs,
 		shipping,
 		quantity,
-		images,
-		colors,
-		brands,
-		color,
-		brand,
+		// images,
+		// colors,
+		// brands,
+		// color,
+		// brand,
 	} = values;
 
 	return (
@@ -84,7 +84,7 @@ const ProductUpdateForm = ({
 					onChange={handleChange}
 				/>
 			</div>
-			<div className="form-group">
+			{/* <div className="form-group">
 				<label>Color</label>
 				<select
 					value={color}
@@ -97,8 +97,8 @@ const ProductUpdateForm = ({
 						</option>
 					))}
 				</select>
-			</div>
-			<div className="form-group">
+			</div> */}
+			{/* <div className="form-group">
 				<label>Brand</label>
 				<select
 					value={brand}
@@ -112,7 +112,7 @@ const ProductUpdateForm = ({
 						</option>
 					))}
 				</select>
-			</div>
+			</div> */}
 
 			<div className="form-group">
 				<label>Category</label>

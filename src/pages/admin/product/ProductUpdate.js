@@ -17,10 +17,10 @@ const initialState = {
 	shipping: "",
 	quantity: "",
 	images: [],
-	colors: ["Black", "Brown", "Silver", "White", "Blue"],
-	brands: ["Apple", "Samsung", "Microsoft", "Lenovo", "ASUS"],
-	color: "",
-	brand: "",
+	// colors: ["Black", "Brown", "Silver", "White", "Blue"],
+	// brands: ["Apple", "Samsung", "Microsoft", "Lenovo", "ASUS"],
+	// color: "",
+	// brand: "",
 };
 
 // match works  because the app.js is wrapped in <BrowserRouter> of the index.js

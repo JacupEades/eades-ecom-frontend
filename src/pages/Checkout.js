@@ -31,7 +31,7 @@ const Checkout = ({ history }) => {
 			setProducts(res.data.products);
 			setTotal(res.data.cartTotal);
 		});
-	}, []);
+	}, [user.token]);
 
 	const emptyCart = () => {
 		// needs to be removed from three different places
@@ -102,7 +102,8 @@ const Checkout = ({ history }) => {
 		products.map((p, i) => (
 			<div key={i}>
 				<p>
-					{p.product.title} ({p.color}) x {p.count} ={p.product.price * p.count}
+					{p.product.title} {/* ({p.color}) */}x {p.count} =
+					{p.product.price * p.count}
 				</p>
 			</div>
 		));

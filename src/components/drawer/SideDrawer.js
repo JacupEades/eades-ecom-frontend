@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Drawer, Button } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import laptop from "../../images/laptop.jpg";
+import DefaultImage from "../../images/defaultImage.jpg";
 
 const SideDrawer = () => {
 	const dispatch = useDispatch();
@@ -48,8 +48,8 @@ const SideDrawer = () => {
 						) : (
 							<>
 								<img
-									alt="default laptop product"
-									src={laptop}
+									alt="DefaultImage product"
+									src={DefaultImage}
 									style={imageStyle}
 								/>
 								<p className="text-center bg-primary text-light">

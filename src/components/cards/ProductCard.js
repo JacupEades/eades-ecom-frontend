@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, Tooltip } from "antd";
-import Laptop from "../../images/laptop.jpg";
+import DefaultImage from "../../images/defaultImage.jpg";
 import { EyeOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { showAverage } from "../../functions/rating";
@@ -63,7 +63,7 @@ const ProductCard = ({ product }) => {
 				// className="mt-4"
 				cover={
 					<img
-						src={images && images.length ? images[0].url : Laptop}
+						src={images && images.length ? images[0].url : DefaultImage}
 						alt="Default Product, none provided"
 						style={{ height: "150px", objectFit: "cover" }}
 						className="p-1"

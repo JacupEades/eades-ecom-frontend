@@ -5,7 +5,7 @@ import { createPaymentIntent } from "../functions/stripe";
 import { Link } from "react-router-dom";
 import { Card } from "antd";
 import { DollarOutlined, CheckOutlined } from "@ant-design/icons";
-import Laptop from "../images/laptop.jpg";
+import DefaultImage from "../images/defaultImage.jpg";
 import { createOrder, emptyUserCart } from "../functions/user";
 
 const StripeCheckout = ({ history }) => {
@@ -116,8 +116,8 @@ const StripeCheckout = ({ history }) => {
 				<Card
 					cover={
 						<img
-							alt="laptop default"
-							src={Laptop}
+							alt="DefaultImage default"
+							src={"DefaultImage"}
 							style={{
 								height: "200px",
 								objectFit: "cover",

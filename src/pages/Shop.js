@@ -284,8 +284,6 @@ const Shop = () => {
 		<div className="container-fluid ps-0">
 			<div className="row">
 				<div className="col-md-3">
-					<h4 className="text-center pt-2 mb-0">Search/Filter</h4>
-					<hr className="mb-0" />
 					<ShopNav
 						price={price}
 						setPrice={setPrice}

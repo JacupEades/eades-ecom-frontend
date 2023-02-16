@@ -122,7 +122,7 @@ const SingleProduct = ({ product, onStarClick, star }) => {
 				<Card
 					actions={[
 						<Tooltip title={tooltip}>
-							<a href="#0" onClick={handleAddToCart}>
+							<a href="/user/wishlist" onClick={handleAddToCart}>
 								<ShoppingCartOutlined className="text-danger" /> <br /> Add to
 								Cart
 							</a>

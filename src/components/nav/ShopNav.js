@@ -41,6 +41,7 @@ const ShopNav = ({
 		};
 	}
 	const items = [
+		getItem(<span className="h4 ps-2">Search / Filter</span>, "heading"),
 		// Price Slider
 		getItem(
 			<span className="h6">Price</span>,
@@ -108,7 +109,15 @@ const ShopNav = ({
 		),
 	];
 
-	return <Menu mode="inline" items={items} />;
+	return (
+		<Menu
+			mode="inline"
+			items={items}
+			style={{
+				height: "100%",
+			}}
+		/>
+	);
 };
 
 export default ShopNav;

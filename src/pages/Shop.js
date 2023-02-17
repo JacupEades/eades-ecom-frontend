@@ -18,7 +18,7 @@ const Shop = () => {
 	const [categoryIds, setCategoryIds] = useState([]);
 	const [star, setStar] = useState("");
 	const [subs, setSubs] = useState([]);
-	const [sub, setSub] = useState([]);
+	const [sub, setSub] = useState("");
 	// const [brands, setBrands] = useState([
 	// 	"Apple",
 	// 	"Samsung",
@@ -51,6 +51,7 @@ const Shop = () => {
 
 	const fetchProducts = (arg) => {
 		fetchProductsByFilter(arg).then((res) => {
+			console.log(res.data);
 			setProducts(res.data);
 		});
 	};
@@ -58,18 +59,15 @@ const Shop = () => {
 	// 1. load products by default on page load
 	const loadAllProducts = () => {
 		getProductsByCount(12).then((p) => {
+			// console.log(p.data);
 			setProducts(p.data);
 			setLoading(false);
 		});
 	};
 	// 2. load products on user search input
 	useEffect(() => {
-		// console.log("load products on user search input", text);
 		const delayed = setTimeout(() => {
 			fetchProducts({ query: text });
-			if (!text) {
-				loadAllProducts();
-			}
 		}, 300);
 		return () => clearTimeout(delayed);
 	}, [text]);
@@ -77,24 +75,23 @@ const Shop = () => {
 	// 3. load products based on price range
 	useEffect(() => {
 		console.log("ok to request");
-		const delayed = setTimeout(() => {
-			fetchProducts({ price });
-		}, 300);
-		return () => clearTimeout(delayed);
-	}, [ok, price]);
+		fetchProducts({ price });
+	}, [ok]);
 
 	const handleSlider = (value) => {
 		dispatch({
 			type: "SEARCH_QUERY",
 			payload: { text: "" },
 		});
+
+		// reset
 		setCategoryIds([]);
+		setPrice(value);
 		setStar("");
 		setSub("");
 		// setBrand("");
 		// setColor("");
 		setShipping("");
-		setPrice(value);
 		setTimeout(() => {
 			setOk(!ok);
 		}, 500);
@@ -265,7 +262,7 @@ const Shop = () => {
 	);
 
 	const handleShippingChange = (e) => {
-		// console.log(e.target.value);
+		console.log(e.target.value);
 		dispatch({
 			type: "SEARCH_QUERY",
 			payload: { text: "" },
